@@ -7,28 +7,28 @@ import { GradientText } from "../ui/GradientText";
 
 const faqs = [
   {
-    q: "What exactly does TIMAMY DIGITAL do?",
-    a: "TIMAMY DIGITAL helps entrepreneurs, creators, freelancers and small businesses build digital systems, automate their operations, and scale their revenue using AI. We do this through four core services: AI Agents, Automation Systems (n8n), Notion Systems, and Digital Products.",
+    q: "Qu'est-ce que TIMAMY DIGITAL fait exactement ?",
+    a: "TIMAMY DIGITAL aide les entrepreneurs, créateurs, freelances et petites entreprises à construire des systèmes digitaux, automatiser leurs opérations et scaler leurs revenus grâce à l'IA. Nous le faisons à travers quatre services principaux : Agents IA, Systèmes d'automatisation (n8n), Systèmes Notion, et Produits Digitaux.",
   },
   {
-    q: "Who is this for?",
-    a: "Our services are designed for solopreneurs, freelancers, coaches, content creators, agency owners, and small business owners who want to work smarter — not harder. If you're spending more time on repetitive tasks than on high-value work, TIMAMY DIGITAL is built for you.",
+    q: "Pour qui est-ce fait ?",
+    a: "Nos services sont conçus pour les solopreneurs, freelances, coachs, créateurs de contenu, agences et petits business qui veulent travailler plus intelligemment — pas plus dur. Si vous passez plus de temps sur des tâches répétitives que sur du travail à haute valeur ajoutée, TIMAMY DIGITAL est fait pour vous.",
   },
   {
-    q: "How quickly can I see results?",
-    a: "Most clients see measurable time savings within the first 2 weeks after their automation systems are deployed. Revenue results typically compound over 30–90 days as digital products and AI agents begin generating consistent output.",
+    q: "À quelle vitesse puis-je voir des résultats ?",
+    a: "La plupart des clients constatent des économies de temps mesurables dans les 2 premières semaines après le déploiement de leurs systèmes d'automatisation. Les résultats en termes de revenus se cumulent généralement sur 30 à 90 jours à mesure que les produits digitaux et les agents IA génèrent une production constante.",
   },
   {
-    q: "Do I need to be technical to use your services?",
-    a: "Absolutely not. We handle all the technical setup, configuration and integration. Our role is to build and deliver fully working systems — you just need to run your business. We also provide documentation and walkthroughs so you stay in control.",
+    q: "Dois-je être technique pour utiliser vos services ?",
+    a: "Absolument pas. Nous gérons toute la configuration technique, la configuration et l'intégration. Notre rôle est de construire et livrer des systèmes entièrement fonctionnels — vous n'avez qu'à gérer votre business. Nous fournissons également la documentation et des tutoriels pour que vous restiez en contrôle.",
   },
   {
-    q: "What's included in the AI Revenue Blueprint™?",
-    a: "The AI Revenue Blueprint™ includes a complete framework covering: AI system architecture, n8n automation workflows, a Notion Business OS template, content machine setup, client acquisition system, revenue tracking dashboard, and ongoing optimization guidance. It's everything you need to build, automate and scale.",
+    q: "Qu'est-ce qui est inclus dans le Blueprint Revenus IA™ ?",
+    a: "Le Blueprint Revenus IA™ comprend un cadre complet couvrant : l'architecture des systèmes IA, les workflows d'automatisation n8n, un template Notion Business OS, la mise en place d'une machine à contenu, un système d'acquisition clients, un tableau de bord de suivi des revenus, et des conseils d'optimisation continus. Tout ce dont vous avez besoin pour construire, automatiser et scaler.",
   },
   {
-    q: "How do I get started?",
-    a: "Start by booking a free Strategy Call. We'll learn about your business, identify your biggest bottlenecks, and map out a custom plan for building, automating and scaling your operations. There's no commitment required — just a conversation.",
+    q: "Comment démarrer ?",
+    a: "Commencez par réserver un appel stratégique gratuit. Nous apprendrons à connaître votre business, identifierons vos plus grands blocages et élaborerons un plan personnalisé pour construire, automatiser et scaler vos opérations. Aucun engagement requis — juste une conversation.",
   },
 ];
 
@@ -90,7 +90,6 @@ export function FAQ() {
       <div className="absolute left-0 bottom-0 w-[400px] h-[400px] rounded-full bg-gradient-radial from-[#7B35E8]/8 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-14">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -98,7 +97,7 @@ export function FAQ() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7B35E8]/30 bg-[#7B35E8]/10 text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest mb-5"
           >
-            Got Questions?
+            Vous avez des questions ?
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +106,7 @@ export function FAQ() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5"
           >
-            Frequently Asked <GradientText>Questions</GradientText>
+            Questions <GradientText>fréquentes</GradientText>
           </motion.h2>
         </div>
 

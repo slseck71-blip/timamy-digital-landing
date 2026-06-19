@@ -8,44 +8,43 @@ import { GradientText } from "../ui/GradientText";
 const pillars = [
   {
     icon: Hammer,
-    label: "Build",
-    description: "Create rock-solid digital systems and AI-powered infrastructure.",
+    label: "Construire",
+    description: "Créer une infrastructure digitale solide et des systèmes IA sur mesure.",
     color: "#7B35E8",
   },
   {
     icon: Zap,
-    label: "Automate",
-    description: "Connect every tool and eliminate repetitive work with smart workflows.",
+    label: "Automatiser",
+    description: "Connecter chaque outil et éliminer les tâches manuelles avec des workflows intelligents.",
     color: "#00D4FF",
   },
   {
     icon: TrendingUp,
-    label: "Scale",
-    description: "Grow revenue without growing headcount — leverage, not labour.",
+    label: "Scaler",
+    description: "Augmenter les revenus sans augmenter les effectifs — levier, pas labeur.",
     color: "#3B82F6",
   },
 ];
 
 const includes = [
-  "AI Revenue System Blueprint",
-  "n8n Automation Workflows",
-  "Notion Business OS Template",
-  "Content Machine Framework",
-  "Client Acquisition System",
-  "Revenue Tracking Dashboard",
+  "Plan directeur du système de revenus IA",
+  "Workflows d'automatisation n8n",
+  "Template Notion Business OS",
+  "Cadre de machine à contenu",
+  "Système d'acquisition clients",
+  "Tableau de bord de suivi des revenus",
 ];
 
 export function FeaturedOffer() {
   return (
     <section id="offer" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#7B35E8]/10 via-[#0F172A] to-[#00D4FF]/8" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/50 to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00D4FF]/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
+          {/* Gauche */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -53,7 +52,7 @@ export function FeaturedOffer() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 text-xs font-semibold text-[#00D4FF] uppercase tracking-widest mb-6"
             >
-              ✦ Featured Offer
+              ✦ Offre phare
             </motion.div>
 
             <motion.h2
@@ -63,8 +62,8 @@ export function FeaturedOffer() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight"
             >
-              AI Revenue{" "}
-              <GradientText>Blueprint™</GradientText>
+              Blueprint Revenus{" "}
+              <GradientText>IA™</GradientText>
             </motion.h2>
 
             <motion.p
@@ -74,10 +73,10 @@ export function FeaturedOffer() {
               transition={{ delay: 0.2 }}
               className="text-lg text-white/60 leading-relaxed mb-8"
             >
-              A complete framework for building, automating and scaling a modern digital business using AI. The exact system TIMAMY DIGITAL uses to generate consistent revenue.
+              Un cadre complet pour construire, automatiser et scaler un business digital moderne grâce à l'IA. Le système exact qu'utilise TIMAMY DIGITAL pour générer des revenus constants.
             </motion.p>
 
-            {/* Pillars */}
+            {/* Piliers */}
             <div className="grid grid-cols-3 gap-4 mb-10">
               {pillars.map((pillar, i) => (
                 <motion.div
@@ -107,12 +106,12 @@ export function FeaturedOffer() {
               transition={{ delay: 0.4 }}
             >
               <Button href="#contact" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
-                Get Started
+                Commencer maintenant
               </Button>
             </motion.div>
           </div>
 
-          {/* Right — what's included card */}
+          {/* Droite — carte contenu */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -120,12 +119,11 @@ export function FeaturedOffer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="relative rounded-3xl border border-[#7B35E8]/25 bg-[#1E293B]/60 backdrop-blur-xl p-8 shadow-[0_0_80px_rgba(123,53,232,0.15)]">
-              {/* Glow top */}
               <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/60 to-transparent" />
 
               <div className="mb-6">
-                <span className="text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest">What's Inside</span>
-                <h3 className="text-2xl font-bold mt-2">Everything You Need to Scale</h3>
+                <span className="text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest">Ce qui est inclus</span>
+                <h3 className="text-2xl font-bold mt-2">Tout ce qu'il faut pour scaler</h3>
               </div>
 
               <div className="space-y-3">
@@ -146,14 +144,14 @@ export function FeaturedOffer() {
 
               <div className="mt-8 pt-6 border-t border-white/8 flex items-center justify-between">
                 <div>
-                  <p className="text-xs text-white/40 mb-1">One-time investment</p>
+                  <p className="text-xs text-white/40 mb-1">Investissement unique</p>
                   <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-white">$297</span>
-                    <span className="text-sm text-white/40 line-through">$597</span>
+                    <span className="text-3xl font-extrabold text-white">297 €</span>
+                    <span className="text-sm text-white/40 line-through">597 €</span>
                   </div>
                 </div>
                 <span className="px-3 py-1.5 rounded-full bg-[#00D4FF]/15 border border-[#00D4FF]/30 text-xs font-bold text-[#00D4FF]">
-                  50% OFF
+                  -50%
                 </span>
               </div>
             </div>

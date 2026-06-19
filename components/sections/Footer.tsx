@@ -5,20 +5,20 @@ import { Zap, Twitter, Linkedin, Instagram, Youtube, ArrowRight } from "lucide-r
 
 const links = {
   Services: [
-    { label: "AI Agents", href: "#services" },
-    { label: "Automation Systems", href: "#services" },
-    { label: "Notion Systems", href: "#services" },
-    { label: "Digital Products", href: "#services" },
+    { label: "Agents IA", href: "#services" },
+    { label: "Automatisation", href: "#services" },
+    { label: "Systèmes Notion", href: "#services" },
+    { label: "Produits Digitaux", href: "#services" },
   ],
   Solutions: [
-    { label: "AI Revenue Blueprint", href: "#offer" },
-    { label: "Strategy Call", href: "#contact" },
-    { label: "How It Works", href: "#process" },
-    { label: "Success Stories", href: "#testimonials" },
+    { label: "Blueprint Revenus IA", href: "#offer" },
+    { label: "Appel Stratégique", href: "#contact" },
+    { label: "Comment ça marche", href: "#process" },
+    { label: "Témoignages", href: "#testimonials" },
   ],
   Contact: [
-    { label: "Book a Call", href: "#contact" },
-    { label: "Send a Message", href: "#contact" },
+    { label: "Réserver un appel", href: "#contact" },
+    { label: "Envoyer un message", href: "#contact" },
     { label: "hello@timamydigital.com", href: "mailto:hello@timamydigital.com" },
   ],
 };
@@ -33,12 +33,11 @@ const socials = [
 export function Footer() {
   return (
     <footer className="relative border-t border-white/[0.07] overflow-hidden">
-      {/* Top glow */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/40 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gradient-radial from-[#7B35E8]/10 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* CTA banner */}
+        {/* Bannière CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -48,27 +47,27 @@ export function Footer() {
           <div className="absolute inset-0 rounded-3xl" style={{ background: "radial-gradient(circle at 50% 0%, rgba(123,53,232,0.15), transparent 70%)" }} />
           <div className="relative z-10">
             <h3 className="text-3xl sm:text-4xl font-extrabold mb-4">
-              Ready to{" "}
+              Prêt à{" "}
               <span className="bg-gradient-to-r from-[#7B35E8] to-[#00D4FF] bg-clip-text text-transparent">
-                Build, Automate & Scale?
+                Construire, Automatiser & Scaler ?
               </span>
             </h3>
             <p className="text-white/60 mb-8 max-w-xl mx-auto">
-              Join 500+ entrepreneurs who are leveraging AI and automation to grow their business.
+              Rejoignez 500+ entrepreneurs qui exploitent l'IA et l'automatisation pour développer leur business.
             </p>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-[#7B35E8] to-[#3B82F6] text-white font-bold text-lg shadow-[0_0_40px_rgba(123,53,232,0.4)] hover:shadow-[0_0_60px_rgba(123,53,232,0.6)] hover:scale-[1.02] transition-all duration-200"
             >
-              Book a Free Strategy Call
+              Réserver un appel stratégique gratuit
               <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </motion.div>
 
-        {/* Links grid */}
+        {/* Grille de liens */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 mb-12">
-          {/* Brand */}
+          {/* Marque */}
           <div className="col-span-2 sm:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4 group">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7B35E8] to-[#00D4FF] flex items-center justify-center shadow-[0_0_20px_rgba(123,53,232,0.4)]">
@@ -82,11 +81,11 @@ export function Footer() {
               </span>
             </a>
             <p className="text-xs text-white/40 leading-relaxed mb-4">
-              Build • Automate • Scale
+              Construire • Automatiser • Scaler
               <br />
-              Helping entrepreneurs leverage AI to grow faster.
+              Aider les entrepreneurs à exploiter l'IA pour grandir plus vite.
             </p>
-            {/* Socials */}
+            {/* Réseaux sociaux */}
             <div className="flex gap-3">
               {socials.map((s) => (
                 <a
@@ -101,7 +100,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Link columns */}
+          {/* Colonnes de liens */}
           {Object.entries(links).map(([title, items]) => (
             <div key={title}>
               <h4 className="text-xs font-bold text-white/60 uppercase tracking-widest mb-4">{title}</h4>
@@ -121,13 +120,13 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom bar */}
+        {/* Barre inférieure */}
         <div className="pt-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/30">
-            © {new Date().getFullYear()} TIMAMY DIGITAL. All rights reserved.
+            © {new Date().getFullYear()} TIMAMY DIGITAL. Tous droits réservés.
           </p>
           <div className="flex gap-6">
-            {["Privacy Policy", "Terms of Service"].map((item) => (
+            {["Politique de confidentialité", "Conditions d'utilisation"].map((item) => (
               <a key={item} href="#" className="text-xs text-white/30 hover:text-white/60 transition-colors">
                 {item}
               </a>

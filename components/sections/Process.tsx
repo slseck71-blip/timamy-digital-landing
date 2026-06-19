@@ -8,32 +8,32 @@ const steps = [
   {
     number: "01",
     icon: Hammer,
-    label: "Build",
-    title: "Build Your Foundation",
+    label: "Construire",
+    title: "Poser les fondations",
     description:
-      "We start by designing your digital infrastructure — AI systems, Notion workspace, and automation architecture custom-built for your business model.",
+      "On commence par concevoir votre infrastructure digitale — systèmes IA, espace de travail Notion et architecture d'automatisation, entièrement adaptés à votre modèle de business.",
     color: "#7B35E8",
-    items: ["AI Strategy Session", "Systems Architecture", "Notion OS Setup", "Tool Stack Selection"],
+    items: ["Session de stratégie IA", "Architecture des systèmes", "Mise en place Notion OS", "Sélection de la stack d'outils"],
   },
   {
     number: "02",
     icon: Zap,
-    label: "Automate",
-    title: "Automate Everything",
+    label: "Automatiser",
+    title: "Tout automatiser",
     description:
-      "Next we wire up your workflows — n8n automations, AI agents and integrations that eliminate manual tasks and create seamless operations.",
+      "Ensuite on connecte vos workflows — automations n8n, agents IA et intégrations qui éliminent les tâches manuelles et créent des opérations fluides.",
     color: "#00D4FF",
-    items: ["n8n Workflow Build", "AI Agent Deployment", "Tool Integration", "Testing & QA"],
+    items: ["Création workflows n8n", "Déploiement agents IA", "Intégration des outils", "Tests & contrôle qualité"],
   },
   {
     number: "03",
     icon: TrendingUp,
-    label: "Scale",
-    title: "Scale Your Revenue",
+    label: "Scaler",
+    title: "Scaler vos revenus",
     description:
-      "Finally we launch your growth engine — digital products, automated funnels and revenue systems that compound month after month.",
+      "Enfin on lance votre moteur de croissance — produits digitaux, tunnels automatisés et systèmes de revenus qui se cumulent mois après mois.",
     color: "#3B82F6",
-    items: ["Digital Product Launch", "Revenue Automation", "Analytics Setup", "Ongoing Optimization"],
+    items: ["Lancement produits digitaux", "Automatisation des revenus", "Mise en place analytics", "Optimisation continue"],
   },
 ];
 
@@ -43,7 +43,7 @@ export function Process() {
       <div className="absolute left-1/2 -translate-x-1/2 top-1/4 w-[700px] h-[700px] rounded-full bg-gradient-radial from-[#7B35E8]/6 to-transparent blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+        {/* En-tête */}
         <div className="text-center mb-20">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -51,7 +51,7 @@ export function Process() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7B35E8]/30 bg-[#7B35E8]/10 text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest mb-5"
           >
-            The Process
+            Le processus
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export function Process() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-5"
           >
-            How It <GradientText>Works</GradientText>
+            Comment ça <GradientText>fonctionne</GradientText>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -69,13 +69,13 @@ export function Process() {
             transition={{ delay: 0.2 }}
             className="text-lg text-white/55 max-w-xl mx-auto"
           >
-            A proven 3-step framework that takes you from chaos to clarity to consistent growth.
+            Un cadre en 3 étapes éprouvé qui vous fait passer du chaos à la clarté, puis à une croissance régulière.
           </motion.p>
         </div>
 
-        {/* Steps */}
+        {/* Étapes */}
         <div className="relative">
-          {/* Connecting line (desktop) */}
+          {/* Ligne de connexion (desktop) */}
           <div className="hidden lg:block absolute top-[52px] left-[calc(16.67%+24px)] right-[calc(16.67%+24px)] h-px">
             <div className="w-full h-full bg-gradient-to-r from-[#7B35E8] via-[#00D4FF] to-[#3B82F6] opacity-30" />
           </div>
@@ -90,7 +90,7 @@ export function Process() {
                 transition={{ duration: 0.5, delay: i * 0.15 }}
                 className="relative"
               >
-                {/* Step icon */}
+                {/* Icône de l'étape */}
                 <div className="flex items-center gap-4 mb-6">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
@@ -102,7 +102,6 @@ export function Process() {
                     }}
                   >
                     <step.icon className="w-6 h-6" style={{ color: step.color }} />
-                    {/* Animated ring */}
                     <motion.div
                       className="absolute inset-0 rounded-2xl"
                       style={{ border: `1px solid ${step.color}` }}
@@ -111,12 +110,12 @@ export function Process() {
                     />
                   </motion.div>
                   <div>
-                    <span className="text-xs font-bold text-white/30 uppercase tracking-widest">Step {step.number}</span>
+                    <span className="text-xs font-bold text-white/30 uppercase tracking-widest">Étape {step.number}</span>
                     <h3 className="font-extrabold text-xl text-white">{step.label}</h3>
                   </div>
                 </div>
 
-                {/* Content card */}
+                {/* Carte de contenu */}
                 <div
                   className="rounded-2xl p-6 border transition-all duration-300 hover:shadow-lg"
                   style={{

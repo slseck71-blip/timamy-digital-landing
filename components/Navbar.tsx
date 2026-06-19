@@ -8,7 +8,7 @@ import { Button } from "./ui/Button";
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Solutions", href: "#offer" },
-  { label: "Process", href: "#process" },
+  { label: "Processus", href: "#process" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
@@ -66,7 +66,7 @@ export function Navbar() {
             {/* CTA */}
             <div className="hidden lg:block">
               <Button href="#contact" size="sm">
-                Book a Call
+                Réserver un appel
               </Button>
             </div>
 
@@ -74,7 +74,7 @@ export function Navbar() {
             <button
               className="lg:hidden p-2 rounded-lg text-white/70 hover:text-white hover:bg-white/5 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
+              aria-label="Ouvrir le menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -82,7 +82,7 @@ export function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
+      {/* Menu mobile */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -104,7 +104,7 @@ export function Navbar() {
                 </a>
               ))}
               <Button href="#contact" className="mt-2 w-full justify-center">
-                Book a Strategy Call
+                Réserver un appel stratégique
               </Button>
             </div>
           </motion.div>

@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { Bot, Zap, BookOpen, Workflow, Package, TrendingUp } from "lucide-react";
 
 const indicators = [
-  { icon: Bot, label: "AI" },
-  { icon: Zap, label: "Automation" },
+  { icon: Bot, label: "Intelligence Artificielle" },
+  { icon: Zap, label: "Automatisation" },
   { icon: BookOpen, label: "Notion" },
   { icon: Workflow, label: "n8n" },
-  { icon: Package, label: "Digital Products" },
-  { icon: TrendingUp, label: "Business Growth" },
+  { icon: Package, label: "Produits Digitaux" },
+  { icon: TrendingUp, label: "Croissance Business" },
 ];
 
 export function Trust() {
@@ -24,7 +24,7 @@ export function Trust() {
           viewport={{ once: true }}
           className="text-center text-sm font-medium text-white/40 uppercase tracking-widest mb-10"
         >
-          Powered by cutting-edge tools & platforms
+          Propulsé par les meilleurs outils et plateformes
         </motion.p>
 
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-6">

@@ -9,27 +9,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "TIMAMY DIGITAL — Build • Automate • Scale",
+  title: "TIMAMY DIGITAL — Construire • Automatiser • Scaler",
   description:
-    "TIMAMY DIGITAL helps entrepreneurs, creators, freelancers and small businesses build systems, automate operations and scale revenue using AI.",
+    "TIMAMY DIGITAL aide les entrepreneurs, créateurs, freelances et petites entreprises à construire des systèmes, automatiser leurs opérations et scaler leurs revenus grâce à l'IA.",
   keywords: [
-    "AI automation",
-    "digital systems",
-    "business automation",
-    "Notion systems",
-    "n8n workflows",
-    "AI agents",
-    "digital products",
-    "entrepreneur tools",
-    "scale business",
+    "automatisation IA",
+    "systèmes digitaux",
+    "automatisation business",
+    "systèmes Notion",
+    "workflows n8n",
+    "agents IA",
+    "produits digitaux",
+    "outils entrepreneur",
+    "scaler business",
     "TIMAMY DIGITAL",
   ],
   authors: [{ name: "TIMAMY DIGITAL" }],
   creator: "TIMAMY DIGITAL",
   openGraph: {
-    title: "TIMAMY DIGITAL — Build • Automate • Scale",
+    title: "TIMAMY DIGITAL — Construire • Automatiser • Scaler",
     description:
-      "Helping entrepreneurs and creators leverage AI, automation and digital systems to grow faster and work smarter.",
+      "Aider les entrepreneurs et créateurs à exploiter l'IA, l'automatisation et les systèmes digitaux pour croître plus vite et travailler plus intelligemment.",
     url: "https://timamydigital.com",
     siteName: "TIMAMY DIGITAL",
     type: "website",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TIMAMY DIGITAL — Build • Automate • Scale",
+    title: "TIMAMY DIGITAL — Construire • Automatiser • Scaler",
     description:
-      "Helping entrepreneurs and creators leverage AI, automation and digital systems to grow faster and work smarter.",
+      "Aider les entrepreneurs et créateurs à exploiter l'IA, l'automatisation et les systèmes digitaux pour croître plus vite et travailler plus intelligemment.",
     images: ["/og-image.png"],
   },
   robots: {

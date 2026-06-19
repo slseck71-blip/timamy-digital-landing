@@ -25,7 +25,6 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate submission
     await new Promise((r) => setTimeout(r, 1200));
     setLoading(false);
     setSubmitted(true);
@@ -36,13 +35,12 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
-      {/* Glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-gradient-radial from-[#7B35E8]/10 to-transparent blur-3xl pointer-events-none" />
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/40 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left — copy */}
+          {/* Gauche — texte */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -50,7 +48,7 @@ export function Contact() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7B35E8]/30 bg-[#7B35E8]/10 text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest mb-6"
             >
-              Let's Talk
+              Parlons-en
             </motion.div>
 
             <motion.h2
@@ -60,8 +58,8 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight"
             >
-              Ready to <GradientText>Build, Automate</GradientText>{" "}
-              and Scale?
+              Prêt à <GradientText>Construire, Automatiser</GradientText>{" "}
+              et Scaler ?
             </motion.h2>
 
             <motion.p
@@ -71,10 +69,10 @@ export function Contact() {
               transition={{ delay: 0.2 }}
               className="text-lg text-white/60 leading-relaxed mb-10"
             >
-              Book a free Strategy Call. We'll map out exactly how to build your systems, automate your operations, and scale your revenue with AI.
+              Réservez un appel stratégique gratuit. Nous cartographierons exactement comment construire vos systèmes, automatiser vos opérations et scaler vos revenus grâce à l'IA.
             </motion.p>
 
-            {/* Contact details */}
+            {/* Coordonnées */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +82,7 @@ export function Contact() {
             >
               {[
                 { icon: Mail, label: "Email", value: "hello@timamydigital.com" },
-                { icon: MessageSquare, label: "Response Time", value: "Within 24 hours" },
+                { icon: MessageSquare, label: "Délai de réponse", value: "Sous 24 heures" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-[#7B35E8]/15 border border-[#7B35E8]/25 flex items-center justify-center flex-shrink-0">
@@ -99,7 +97,7 @@ export function Contact() {
             </motion.div>
           </div>
 
-          {/* Right — form */}
+          {/* Droite — formulaire */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -118,19 +116,19 @@ export function Contact() {
                   <div className="w-16 h-16 rounded-full bg-[#00D4FF]/15 border border-[#00D4FF]/30 flex items-center justify-center mb-5 shadow-[0_0_30px_rgba(0,212,255,0.2)]">
                     <CheckCircle className="w-8 h-8 text-[#00D4FF]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
+                  <h3 className="text-2xl font-bold text-white mb-3">Message envoyé !</h3>
                   <p className="text-white/60 text-sm max-w-xs">
-                    Thanks for reaching out. We'll be in touch within 24 hours to schedule your Strategy Call.
+                    Merci de nous avoir contactés. Nous vous répondrons sous 24 heures pour planifier votre appel stratégique.
                   </p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <h3 className="text-xl font-bold text-white mb-6">Book a Strategy Call</h3>
+                  <h3 className="text-xl font-bold text-white mb-6">Réserver un appel stratégique</h3>
 
-                  {/* Name */}
+                  {/* Nom */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
-                      <User className="w-3.5 h-3.5" /> Full Name
+                      <User className="w-3.5 h-3.5" /> Nom complet
                     </label>
                     <input
                       type="text"
@@ -146,30 +144,30 @@ export function Contact() {
                   {/* Email */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
-                      <Mail className="w-3.5 h-3.5" /> Email Address
+                      <Mail className="w-3.5 h-3.5" /> Adresse email
                     </label>
                     <input
                       type="email"
                       name="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="amara@example.com"
+                      placeholder="amara@exemple.com"
                       required
                       className={inputClass}
                     />
                   </div>
 
-                  {/* Company */}
+                  {/* Entreprise */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
-                      <Building2 className="w-3.5 h-3.5" /> Company / Business Name
+                      <Building2 className="w-3.5 h-3.5" /> Entreprise / Nom du business
                     </label>
                     <input
                       type="text"
                       name="company"
                       value={form.company}
                       onChange={handleChange}
-                      placeholder="Your Business"
+                      placeholder="Votre business"
                       className={inputClass}
                     />
                   </div>
@@ -177,13 +175,13 @@ export function Contact() {
                   {/* Message */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
-                      <MessageSquare className="w-3.5 h-3.5" /> Tell Us About Your Business
+                      <MessageSquare className="w-3.5 h-3.5" /> Parlez-nous de votre business
                     </label>
                     <textarea
                       name="message"
                       value={form.message}
                       onChange={handleChange}
-                      placeholder="What's your biggest bottleneck right now? What do you want to automate or scale?"
+                      placeholder="Quel est votre plus grand blocage en ce moment ? Que voulez-vous automatiser ou scaler ?"
                       required
                       rows={4}
                       className={`${inputClass} resize-none`}
@@ -198,10 +196,10 @@ export function Contact() {
                     {loading ? (
                       <span className="flex items-center gap-2">
                         <span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" />
-                        Sending...
+                        Envoi en cours...
                       </span>
                     ) : (
-                      "Send Message"
+                      "Envoyer le message"
                     )}
                   </Button>
                 </form>
