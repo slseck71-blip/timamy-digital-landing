@@ -19,7 +19,7 @@ const links = {
   Contact: [
     { label: "Réserver un appel", href: "#contact" },
     { label: "Envoyer un message", href: "#contact" },
-    { label: "hello@timamydigital.com", href: "mailto:hello@timamydigital.com" },
+    { label: "contacts@timamydigital.com", href: "mailto:contacts@timamydigital.com" },
   ],
 };
 

@@ -51,8 +51,8 @@ export async function POST(req: Request) {
       const resend = new Resend(resendKey);
       tasks.push(
         resend.emails.send({
-          from: "TIMAMY DIGITAL <hello@timamydigital.com>",
-          to: ["hello@timamydigital.com"],
+          from: "TIMAMY DIGITAL <contacts@timamydigital.com>",
+          to: ["contacts@timamydigital.com"],
           replyTo: email,
           subject: `Nouveau lead — ${name}`,
           html: `

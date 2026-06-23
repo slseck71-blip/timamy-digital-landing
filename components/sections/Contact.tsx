@@ -129,7 +129,7 @@ export function Contact() {
               className="space-y-4"
             >
               {[
-                { icon: Mail, label: "Email", value: "hello@timamydigital.com" },
+                { icon: Mail, label: "Email", value: "contacts@timamydigital.com" },
                 { icon: MessageSquare, label: "Délai de réponse", value: "Sous 24 heures" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
