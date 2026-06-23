@@ -3,63 +3,7 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { GradientText } from "../ui/GradientText";
-
-const testimonials = [
-  {
-    name: "Amara Diallo",
-    role: "Fondatrice e-commerce",
-    company: "ShopLify Africa",
-    avatar: "AD",
-    color: "#7B35E8",
-    rating: 5,
-    text: "TIMAMY DIGITAL a complètement transformé ma façon de gérer mon business. Les agents IA s'occupent de mon support client 24h/24 et les workflows n8n ont automatisé tout mon processus de commande. Je suis passée de 70 à 30 heures de travail par semaine — avec des revenus en hausse de 280%.",
-  },
-  {
-    name: "Kwame Asante",
-    role: "Coach Business",
-    company: "Growth Mindset Academy",
-    avatar: "KA",
-    color: "#00D4FF",
-    rating: 5,
-    text: "Le Notion OS qu'ils ont créé pour mon activité de coaching est incroyable. Onboarding clients, suivi des sessions, facturation — tout est automatisé. J'ai lancé deux nouveaux produits digitaux en 3 mois grâce à leur blueprint et j'ai récupéré mon investissement 10 fois.",
-  },
-  {
-    name: "Fatima Baldé",
-    role: "Créatrice de contenu & Freelance",
-    company: "Creative Hub Studio",
-    avatar: "FB",
-    color: "#3B82F6",
-    rating: 5,
-    text: "Je me noyais dans l'administratif avant TIMAMY DIGITAL. Maintenant mon pipeline de création de contenu est automatisé, les devis partent automatiquement et j'ai une boutique de produits digitaux qui génère des revenus passifs. Un vrai game changer.",
-  },
-  {
-    name: "Oumar Sow",
-    role: "Entrepreneur SaaS",
-    company: "DataFlow Solutions",
-    avatar: "OS",
-    color: "#9B5CF6",
-    rating: 5,
-    text: "Le Blueprint Revenus IA m'a donné le cadre exact dont j'avais besoin. En 60 jours d'implémentation, mon MRR a doublé. La combinaison agents IA, automations n8n et produits digitaux a créé un moteur de revenus que je n'aurais jamais cru possible.",
-  },
-  {
-    name: "Mariama Camara",
-    role: "Dirigeante agence marketing digital",
-    company: "Spark Digital Agency",
-    avatar: "MC",
-    color: "#00D4FF",
-    rating: 5,
-    text: "Nous avons utilisé TIMAMY DIGITAL pour construire des systèmes d'automatisation pour l'onboarding client, le reporting et la livraison. Ce qui prenait 15 heures à mon équipe se fait maintenant automatiquement. On est passé de 8 à 25 clients sans recruter une seule personne.",
-  },
-  {
-    name: "Ibrahim Traoré",
-    role: "Formateur en ligne",
-    company: "TechLearn Africa",
-    avatar: "IT",
-    color: "#7B35E8",
-    rating: 5,
-    text: "Les systèmes Notion et l'infrastructure de produits digitaux que TIMAMY DIGITAL a construits pour ma plateforme e-learning sont de niveau mondial. Mes lancements de formations sont entièrement automatisés, les apprenants bénéficient d'un meilleur support via l'IA, et je génère des revenus en dormant.",
-  },
-];
+import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
   return (
@@ -67,7 +11,6 @@ export function Testimonials() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#7B35E8]/4 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* En-tête */}
         <div className="text-center mb-16">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -97,11 +40,10 @@ export function Testimonials() {
           </motion.p>
         </div>
 
-        {/* Grille */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {testimonials.map((t, i) => (
             <motion.div
-              key={t.name}
+              key={`${t.name}-${i}`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -123,7 +65,7 @@ export function Testimonials() {
                   className="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
                   style={{ background: `linear-gradient(135deg, ${t.color}, ${t.color}80)` }}
                 >
-                  {t.avatar}
+                  {t.initials}
                 </div>
                 <div>
                   <p className="font-semibold text-sm text-white">{t.name}</p>

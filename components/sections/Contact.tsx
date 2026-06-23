@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle, Mail, MessageSquare, Building2, User } from "lucide-react";
+import { Send, CheckCircle, XCircle, Mail, MessageSquare, Building2, User } from "lucide-react";
 import { Button } from "../ui/Button";
 import { GradientText } from "../ui/GradientText";
 
@@ -13,25 +13,74 @@ interface FormState {
   message: string;
 }
 
+interface FieldErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
+
+function validate(form: FormState): FieldErrors {
+  const errors: FieldErrors = {};
+  if (!form.name.trim()) errors.name = "Le nom est requis.";
+  if (!form.email.trim()) {
+    errors.email = "L'email est requis.";
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = "Format d'email invalide.";
+  }
+  if (!form.message.trim()) errors.message = "Le message est requis.";
+  return errors;
+}
+
 export function Contact() {
   const [form, setForm] = useState<FormState>({ name: "", email: "", company: "", message: "" });
+  const [errors, setErrors] = useState<FieldErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    if (errors[name as keyof FieldErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setServerError(null);
+    const fieldErrors = validate(form);
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors);
+      return;
+    }
+
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setServerError(data.error ?? "Une erreur est survenue. Réessayez.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setServerError("Impossible d'envoyer le message. Vérifiez votre connexion.");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const inputClass =
-    "w-full bg-white/[0.04] border border-white/10 rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#7B35E8]/60 focus:bg-[#7B35E8]/5 transition-all duration-200";
+  const inputClass = (hasError?: string) =>
+    `w-full bg-white/[0.04] border rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/30 focus:outline-none focus:bg-[#7B35E8]/5 transition-all duration-200 ${
+      hasError
+        ? "border-red-500/60 focus:border-red-500/80"
+        : "border-white/10 focus:border-[#7B35E8]/60"
+    }`;
 
   return (
     <section id="contact" className="relative py-24 lg:py-32 overflow-hidden">
@@ -72,7 +121,6 @@ export function Contact() {
               Réservez un appel stratégique gratuit. Nous cartographierons exactement comment construire vos systèmes, automatiser vos opérations et scaler vos revenus grâce à l'IA.
             </motion.p>
 
-            {/* Coordonnées */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,10 +170,9 @@ export function Contact() {
                   </p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
                   <h3 className="text-xl font-bold text-white mb-6">Réserver un appel stratégique</h3>
 
-                  {/* Nom */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
                       <User className="w-3.5 h-3.5" /> Nom complet
@@ -136,12 +183,11 @@ export function Contact() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Amara Diallo"
-                      required
-                      className={inputClass}
+                      className={inputClass(errors.name)}
                     />
+                    {errors.name && <p className="mt-1.5 text-xs text-red-400">{errors.name}</p>}
                   </div>
 
-                  {/* Email */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
                       <Mail className="w-3.5 h-3.5" /> Adresse email
@@ -152,12 +198,11 @@ export function Contact() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="amara@exemple.com"
-                      required
-                      className={inputClass}
+                      className={inputClass(errors.email)}
                     />
+                    {errors.email && <p className="mt-1.5 text-xs text-red-400">{errors.email}</p>}
                   </div>
 
-                  {/* Entreprise */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
                       <Building2 className="w-3.5 h-3.5" /> Entreprise / Nom du business
@@ -168,11 +213,10 @@ export function Contact() {
                       value={form.company}
                       onChange={handleChange}
                       placeholder="Votre business"
-                      className={inputClass}
+                      className={inputClass()}
                     />
                   </div>
 
-                  {/* Message */}
                   <div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-white/50 uppercase tracking-wider mb-2">
                       <MessageSquare className="w-3.5 h-3.5" /> Parlez-nous de votre business
@@ -182,16 +226,24 @@ export function Contact() {
                       value={form.message}
                       onChange={handleChange}
                       placeholder="Quel est votre plus grand blocage en ce moment ? Que voulez-vous automatiser ou scaler ?"
-                      required
                       rows={4}
-                      className={`${inputClass} resize-none`}
+                      className={`${inputClass(errors.message)} resize-none`}
                     />
+                    {errors.message && <p className="mt-1.5 text-xs text-red-400">{errors.message}</p>}
                   </div>
+
+                  {serverError && (
+                    <div className="flex items-center gap-2 p-3 rounded-xl bg-red-500/10 border border-red-500/25 text-sm text-red-400">
+                      <XCircle className="w-4 h-4 flex-shrink-0" />
+                      {serverError}
+                    </div>
+                  )}
 
                   <Button
                     size="lg"
                     className="w-full justify-center"
                     icon={loading ? undefined : <Send className="w-4 h-4" />}
+                    disabled={loading}
                   >
                     {loading ? (
                       <span className="flex items-center gap-2">
