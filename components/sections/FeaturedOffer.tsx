@@ -105,7 +105,7 @@ export function FeaturedOffer() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <Button href="#contact" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
+              <Button href="#pricing" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
                 Commencer maintenant
               </Button>
             </motion.div>
