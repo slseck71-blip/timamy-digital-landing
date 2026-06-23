@@ -28,7 +28,7 @@ export const products: Product[] = [
     originalPrice: 14000,
     originalPriceLabel: "14 000 FCFA",
     currency: "FCFA",
-    chariowUrl: "https://timamydigital.com/timamy/prd_lvpho4",
+    chariowUrl: "https://timamydigital.com/prd_lvpho4",
     color: "#3B82F6",
     accentColor: "#60A5FA",
     emoji: "📊",
