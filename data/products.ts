@@ -23,8 +23,8 @@ export const products: Product[] = [
     subtitle: "Gère tes ventes facilement (Google Sheets)",
     description:
       "Calcule automatiquement ta marge nette, identifie tes produits stars et compare tes canaux de vente (WhatsApp, TikTok, Shopify...) en moins de 30 secondes par jour.",
-    price: 4500,
-    priceLabel: "4 500 FCFA",
+    price: 8500,
+    priceLabel: "8 500 FCFA",
     originalPrice: 14000,
     originalPriceLabel: "14 000 FCFA",
     currency: "FCFA",
