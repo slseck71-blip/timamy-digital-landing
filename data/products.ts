@@ -61,7 +61,7 @@ export const products: Product[] = [
     originalPrice: 15000,
     originalPriceLabel: "",
     currency: "FCFA",
-    chariowUrl: "https://timamydigital.com/timamy/prd_s62jbi31",
+    chariowUrl: "https://timamydigital.com/prd_s62jbi31",
     badge: "⭐ Offre phare",
     featured: true,
     color: "#00D4FF",
