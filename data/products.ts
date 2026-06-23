@@ -44,7 +44,7 @@ export const products: Product[] = [
     originalPrice: 12000,
     originalPriceLabel: "12 000 FCFA",
     currency: "FCFA",
-    chariowUrl: "https://timamydigital.com/timamy/prd_y57s4i",
+    chariowUrl: "https://timamydigital.com/prd_y57s4i",
     badge: "Ebook + Méthode SCALE™",
     color: "#7B35E8",
     accentColor: "#9B5CF6",
