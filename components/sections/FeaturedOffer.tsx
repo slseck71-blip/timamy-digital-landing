@@ -1,50 +1,34 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Hammer, Zap, TrendingUp } from "lucide-react";
-import { Button } from "../ui/Button";
+import { ArrowRight, CheckCircle, LayoutDashboard, Sparkles, Newspaper, TrendingUp, Package, Users, Zap, BriefcaseBusiness } from "lucide-react";
 import { GradientText } from "../ui/GradientText";
+import { blueprintOsModules } from "@/data/products";
 
-const pillars = [
-  {
-    icon: Hammer,
-    label: "Construire",
-    description: "Créer une infrastructure digitale solide et des systèmes IA sur mesure.",
-    color: "#7B35E8",
-  },
-  {
-    icon: Zap,
-    label: "Automatiser",
-    description: "Connecter chaque outil et éliminer les tâches manuelles avec des workflows intelligents.",
-    color: "#00D4FF",
-  },
-  {
-    icon: TrendingUp,
-    label: "Scaler",
-    description: "Augmenter les revenus sans augmenter les effectifs — levier, pas labeur.",
-    color: "#3B82F6",
-  },
+const moduleIcons = [
+  LayoutDashboard,
+  Sparkles,
+  Newspaper,
+  TrendingUp,
+  Package,
+  Users,
+  Zap,
+  BriefcaseBusiness,
 ];
 
-const includes = [
-  "Plan directeur du système de revenus IA",
-  "Workflows d'automatisation n8n",
-  "Template Notion Business OS",
-  "Cadre de machine à contenu",
-  "Système d'acquisition clients",
-  "Tableau de bord de suivi des revenus",
-];
+const CHARIOW_URL = "https://timamydigital.com/timamy/prd_s62jbi31";
 
 export function FeaturedOffer() {
   return (
     <section id="offer" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#7B35E8]/10 via-[#0F172A] to-[#00D4FF]/8" />
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00D4FF]/30 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00D4FF]/8 via-[#0F172A] to-[#7B35E8]/10" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00D4FF]/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/30 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Gauche */}
+
+          {/* Gauche — pitch */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -52,7 +36,7 @@ export function FeaturedOffer() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#00D4FF]/30 bg-[#00D4FF]/10 text-xs font-semibold text-[#00D4FF] uppercase tracking-widest mb-6"
             >
-              ✦ Offre phare
+              ⭐ Offre phare
             </motion.div>
 
             <motion.h2
@@ -60,102 +44,114 @@ export function FeaturedOffer() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-5 leading-tight"
+              className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-2 leading-tight"
             >
-              Blueprint Revenus{" "}
-              <GradientText>IA™</GradientText>
+              AI Revenue Blueprint{" "}
+              <GradientText variant="blue-cyan">OS</GradientText>
             </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="text-sm font-semibold text-[#00D4FF] uppercase tracking-widest mb-5"
+            >
+              Système Notion tout-en-un pour entrepreneurs digitaux
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-white/60 leading-relaxed mb-8"
+              className="text-lg text-white/60 leading-relaxed mb-10"
             >
-              Un cadre complet pour construire, automatiser et scaler un business digital moderne grâce à l'IA. Le système exact qu'utilise TIMAMY DIGITAL pour générer des revenus constants.
+              Pilote tout ton business IA depuis un seul espace Notion — objectifs, contenu, revenus, produits, prospects et automatisations. 8 modules interconnectés, exemples pré-remplis, guide de démarrage et roadmap 90 jours inclus.
             </motion.p>
 
-            {/* Piliers */}
-            <div className="grid grid-cols-3 gap-4 mb-10">
-              {pillars.map((pillar, i) => (
-                <motion.div
-                  key={pillar.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 + i * 0.1 }}
-                  className="text-center p-4 rounded-2xl border border-white/8 bg-white/[0.03] hover:border-[#7B35E8]/30 transition-all duration-300"
-                >
-                  <div
-                    className="w-10 h-10 rounded-xl mx-auto mb-3 flex items-center justify-center"
-                    style={{ background: `${pillar.color}20`, border: `1px solid ${pillar.color}30` }}
-                  >
-                    <pillar.icon className="w-5 h-5" style={{ color: pillar.color }} />
-                  </div>
-                  <p className="font-bold text-white text-sm mb-1">{pillar.label}</p>
-                  <p className="text-xs text-white/45 leading-snug">{pillar.description}</p>
-                </motion.div>
-              ))}
-            </div>
-
+            {/* Prix + CTA */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-wrap items-center gap-5"
             >
-              <Button href="#pricing" size="lg" icon={<ArrowRight className="w-5 h-5" />}>
-                Commencer maintenant
-              </Button>
+              <div>
+                <p className="text-xs text-white/40 mb-1">Accès à vie · Paiement unique</p>
+                <span className="text-4xl font-extrabold text-white">15 000 FCFA</span>
+              </div>
+
+              <a
+                href={CHARIOW_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-white text-base transition-all duration-200 hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(0,212,255,0.4)]"
+                style={{
+                  background: "linear-gradient(135deg, #00D4FF, #3B82F6)",
+                  boxShadow: "0 0 35px rgba(0,212,255,0.3)",
+                }}
+              >
+                Je commande
+                <ArrowRight className="w-5 h-5" />
+              </a>
             </motion.div>
           </div>
 
-          {/* Droite — carte contenu */}
+          {/* Droite — carte modules */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative rounded-3xl border border-[#7B35E8]/25 bg-[#1E293B]/60 backdrop-blur-xl p-8 shadow-[0_0_80px_rgba(123,53,232,0.15)]">
-              <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#7B35E8]/60 to-transparent" />
+            <div className="relative rounded-3xl border border-[#00D4FF]/25 bg-[#1E293B]/60 backdrop-blur-xl p-8 shadow-[0_0_80px_rgba(0,212,255,0.12)]">
+              <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#00D4FF]/60 to-transparent" />
 
               <div className="mb-6">
-                <span className="text-xs font-semibold text-[#9B5CF6] uppercase tracking-widest">Ce qui est inclus</span>
-                <h3 className="text-2xl font-bold mt-2">Tout ce qu'il faut pour scaler</h3>
+                <span className="text-xs font-semibold text-[#00D4FF] uppercase tracking-widest">
+                  🧠 Ce qui est inclus
+                </span>
+                <h3 className="text-xl font-bold text-white mt-2">8 modules interconnectés</h3>
               </div>
 
               <div className="space-y-3">
-                {includes.map((item, i) => (
-                  <motion.div
-                    key={item}
-                    initial={{ opacity: 0, x: -16 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3 + i * 0.08 }}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-[#00D4FF] flex-shrink-0" />
-                    <span className="text-sm text-white/80 font-medium">{item}</span>
-                  </motion.div>
-                ))}
+                {blueprintOsModules.map((module, i) => {
+                  const Icon = moduleIcons[i];
+                  const [moduleName, ...rest] = module.split(" — ");
+                  return (
+                    <motion.div
+                      key={module}
+                      initial={{ opacity: 0, x: -16 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + i * 0.07 }}
+                      className="flex items-start gap-3 group/item"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-[#00D4FF]/12 border border-[#00D4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover/item:bg-[#00D4FF]/20 transition-colors">
+                        <Icon className="w-3.5 h-3.5 text-[#00D4FF]" />
+                      </div>
+                      <div>
+                        <span className="text-sm font-semibold text-white">{moduleName}</span>
+                        {rest.length > 0 && (
+                          <span className="text-xs text-white/45 block leading-snug">{rest.join(" — ")}</span>
+                        )}
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-white/8 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-white/40 mb-1">Investissement unique</p>
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl font-extrabold text-white">297 €</span>
-                    <span className="text-sm text-white/40 line-through">597 €</span>
-                  </div>
+              <div className="mt-7 pt-5 border-t border-white/8">
+                <div className="flex items-center gap-2 text-xs text-white/45">
+                  <CheckCircle className="w-4 h-4 text-[#00D4FF]" />
+                  Exemples pré-remplis · Guide de démarrage · Roadmap 90 jours
                 </div>
-                <span className="px-3 py-1.5 rounded-full bg-[#00D4FF]/15 border border-[#00D4FF]/30 text-xs font-bold text-[#00D4FF]">
-                  -50%
-                </span>
               </div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
